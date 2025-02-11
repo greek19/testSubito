@@ -1,0 +1,74 @@
+@import url("./style/step1.css");
+@import url("./style/step2.css");
+@import url("./style/step3.css");
+
+#root {
+  width: 100%;
+  padding: 2rem;
+  color: white;
+  vertical-align: top;
+}
+
+.boldLeft {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0%;
+}
+
+.colorBlue {
+  color: cornflowerblue;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.commonFieldset {
+  width: 28%;
+  border: none;
+  color: #000000;
+  margin-right: 0.8em;
+  margin-top: 1em;
+  font-style: italic;
+  padding: 2%;
+}
+
+fieldset legend {
+  background: #ffffff;
+  color: #000000;
+  padding: 5px 10px ;
+  border-radius: 5px;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sameLine {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 5px;
+  align-items: center;
+}
+
+.qLabel {
+  font-size: large;
+  font-weight: 600;
+}
+
+.lowerOpacity {
+  opacity: 0.5
+}
+
+@media only screen and (max-width: 1280px) {
+  
+  .commonFieldset {
+    flex: 100%;
+    width: 100%;
+    border: none;
+    color: #000000;
+    margin-right: 0.8em;
+  }
+}
