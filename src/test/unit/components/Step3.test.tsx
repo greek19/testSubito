@@ -58,7 +58,6 @@ describe('Step3 component', () => {
     test('does not allow submission if checkbox is not checked', () => {
       renderComponent();
   
-      const checkbox = screen.getByLabelText('Are you ready to rock?');
       const submitButton = screen.getByText('Complete Registration');
   
       expect(submitButton).toBeDisabled(); 
