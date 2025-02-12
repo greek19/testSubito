@@ -1,20 +1,21 @@
 /* STEP 2*/
 #step2 {
-    background-color: rgb(170, 219, 235);
-  }
-  
-  #companyName {
-    opacity: 0;
-    height: 0;
-    transform: translateY(-50%); /* Parte dall'alto */
-    transition: transform 1s ease-out;
-  }
-  
-  #companyName.active {
-    width: 100%; 
-    max-width: 100%; 
-    height: 100%; 
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  /* FINE STEP 2 */
+  background-color: rgb(170, 219, 235);
+}
+
+#companyName {
+  opacity: 0;
+  height: 0;
+  transform: translateY(-50%);
+  transition: transform 1s ease-out;
+}
+
+#companyName.active {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FINE STEP 2 */

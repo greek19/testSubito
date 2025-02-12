@@ -4,7 +4,6 @@ import configureStore from "redux-mock-store";
 import Step1 from "../../../components/Step1";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-// Creiamo un mock dello store Redux
 const mockStore = configureStore();
 const initialState = {
     form: {
@@ -19,7 +18,7 @@ describe("Step1 Component", () => {
 
     beforeEach(() => {
         store = mockStore(initialState);
-        store.dispatch = vi.fn(); // Mockiamo il dispatch
+        store.dispatch = vi.fn();
     });
 
     const renderComponent = () =>
@@ -61,14 +60,13 @@ describe("Step1 Component", () => {
         renderComponent();
 
         const input = screen.getByPlaceholderText("Attendee Name");
-        fireEvent.change(input, { target: { value: "John Doe" } });
+        fireEvent.change(input, { target: { value: "Rossi" } });
 
-        // Aspettiamo che l'azione venga dispatchata
         const actions = store.getActions();
         expect(actions).toEqual([
             { type: "form/setStepOneComplete", payload: false },
             { type: "form/setStepOneComplete", payload: false },
-            { type: "form/setNames", payload: ["John Doe"] },
+            { type: "form/setNames", payload: ["Rossi"] },
         ]);
     });
 });

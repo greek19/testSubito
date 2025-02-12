@@ -1,0 +1,7 @@
+services:
+  subito:
+    image: proposal_fe
+    container_name: proposal_fe
+    restart: unless-stopped
+    ports:
+      - "9090:9090"

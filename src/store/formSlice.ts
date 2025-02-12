@@ -22,7 +22,7 @@ const initialState: FormState = {
 
 const formSlice = createSlice({
     name: "form",
-    initialState,   
+    initialState,
     reducers: {
         setAttendees: (state, action: PayloadAction<number>) => {
             state.attendees = action.payload;
@@ -34,7 +34,7 @@ const formSlice = createSlice({
         setCompanyName: (state, action: PayloadAction<string>) => {
             state.companyName = action.payload;
         },
-        setSpecialAccomodations: (state, action: PayloadAction<boolean|null>) => {
+        setSpecialAccomodations: (state, action: PayloadAction<boolean | null>) => {
             state.specialAccomodations = action.payload;
         },
         setReadyToRock: (state, action: PayloadAction<boolean>) => {
@@ -46,7 +46,7 @@ const formSlice = createSlice({
         setStepTwoComplete: (state, action: PayloadAction<boolean>) => {
             state.stepTwoComplete = action.payload;
         },
-        resetForm:()=> initialState
+        resetForm: () => initialState
     },
 });
 

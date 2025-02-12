@@ -5,7 +5,6 @@ import { beforeEach, describe, expect, test, vi } from "vitest";
 import Step2 from "../../../components/Step2";
 import { setCompanyName, setSpecialAccomodations } from "../../../store/formSlice";
 
-// Creiamo un mock dello store Redux
 const mockStore = configureStore();
 const initialState = {
     form: {
@@ -21,7 +20,7 @@ describe("Step2 Component", () => {
 
     beforeEach(() => {
         store = mockStore(initialState);
-        store.dispatch = vi.fn(); // Mockiamo il dispatch
+        store.dispatch = vi.fn();
     });
 
     const renderComponent = () =>
@@ -40,15 +39,11 @@ describe("Step2 Component", () => {
     test("dispatches action when company choice changes", () => {
         renderComponent();
 
-        // Seleziona il radio button "Yes" per la compagnia usando il name del radio group
         const radioYes = screen.getByLabelText("Yes", { selector: 'input[name="comapny"]' });
         fireEvent.click(radioYes);
 
-        // Verifica che l'azione sia stata dispatchata
         expect(store.dispatch).toHaveBeenCalledWith(setCompanyName(""));
     });
-
-
 
     test("dispatches action when company name changes", () => {
         renderComponent();
@@ -62,22 +57,19 @@ describe("Step2 Component", () => {
     test("dispatches action when special accomodations choice changes", () => {
         renderComponent();
 
-        // Seleziona il radio button "Yes" per le sistemazioni speciali usando il name
         const radioYes = screen.getByLabelText("Yes", { selector: 'input[name="accomodation"]' });
         fireEvent.click(radioYes);
 
-        // Verifica che l'azione sia stata dispatchata
         expect(store.dispatch).toHaveBeenCalledWith(setSpecialAccomodations(true));
     });
 
     test("dispatches action when step two conditions are met", async () => {
         renderComponent();
-        // Modifica il nome della compagnia e seleziona un'opzione per le sistemazioni speciali
+
         fireEvent.click(screen.getByLabelText("Yes", { selector: 'input[name="comapny"]' }));  // Seleziona 'Yes' per la compagnia
         fireEvent.change(screen.getByPlaceholderText("Company Name"), { target: { value: "My Company" } });  // Inserisci il nome della compagnia
         fireEvent.click(screen.getByLabelText("Yes", { selector: 'input[name="accomodation"]' }));
 
         expect(store.dispatch).toHaveBeenCalledWith(setCompanyName("My Company"));
     });
-
 });

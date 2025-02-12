@@ -1,15 +1,15 @@
-FROM node:18.18.0-alpine
+FROM node:18.18-alpine
 
 WORKDIR /mnt
 
+COPY package*.json ./
+
 COPY . .
 
-RUN npm install --legacy-peer-deps
+RUN npm install 
 
 RUN npm run build
 
 EXPOSE 9090
 
-# ENTRYPOINT ["sh", "./scripts/tests.sh"]
-
-CMD ["npm", "run", "preview"]
+CMD [ "npm", "run", "preview", "--", "--port", "9090", "--host", "0.0.0.0" ]

@@ -1,67 +1,67 @@
 /* STEP 1 */
 #step1 {
-    background-color: rgb(169, 234, 197);
-    overflow: hidden;
-    transition: min-height 1s ease-out;
-  }
-  
-  #attendees {
-    margin-left: 2%;
-    min-width: 20%;
-  }
-  
-  .textStd {
-    font-style: normal;
-  }
-  
-  #namesContainer {
-    flex-direction: column;
-    font-weight: normal;
-  }
-  
-  .nameRow {
-    flex-direction: row;
-    margin-bottom: 2%;
-  }
-  
-  #names {
-    font-size: large;
-    opacity: 0;
-    height: 0;
-    transform: translateY(-30%); 
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out, height 0.5s ease-out;
-    overflow: hidden;
-  }
-  
-  #names.active {
-    width: 100%; 
-    max-width: 100%; 
-    height: 100%; 
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  
-  .greenCheck {
-    text-align: center;
-    margin-top: 5%; 
-    min-height: 0; 
-    transition: min-height 1s ease-out;
-  } 
-  
-  .greenCheck img {
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transform: translateY(-50%);
-    transition: transform 1s ease-out;
-  }
-  
-  .greenCheck img.active {
-    width: 8em; 
-    max-width: 100%; 
-    height: 8em; 
-    opacity: 1;
-    transform: translateY(0); 
-  }
-  
-  /* FINE STEP 1 */
+  background-color: rgb(169, 234, 197);
+  overflow: hidden;
+  transition: min-height 1s ease-out;
+}
+
+#attendees {
+  margin-left: 2%;
+  min-width: 20%;
+}
+
+.textStd {
+  font-style: normal;
+}
+
+#namesContainer {
+  flex-direction: column;
+  font-weight: normal;
+}
+
+.nameRow {
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+
+#names {
+  font-size: large;
+  opacity: 0;
+  height: 0;
+  transform: translateY(-30%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, height 0.5s ease-out;
+  overflow: hidden;
+}
+
+#names.active {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.greenCheck {
+  text-align: center;
+  margin-top: 5%;
+  min-height: 0;
+  transition: min-height 1s ease-out;
+}
+
+.greenCheck img {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-50%);
+  transition: transform 1s ease-out;
+}
+
+.greenCheck img.active {
+  width: 8em;
+  max-width: 100%;
+  height: 8em;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FINE STEP 1 */
