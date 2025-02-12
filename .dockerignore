@@ -1,2 +1,2 @@
-node_modules
-package-lock.json
+./SubitoTest/node_modules
+./SubitoTest/package-lock.json
