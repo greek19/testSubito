@@ -7,14 +7,18 @@ function App() {
 
   return (
     <>
-      <h1 className="boldLeft">
-        Seminar <span className='colorBlue'>Registration</span>
-      </h1>
-      <div className="container">
-        <Step1 />
-        <Step2 />
-        <Step3 />
-      </div>
+      <header>
+        <h1 className="boldLeft">
+          Seminar <span className='colorBlue'>Registration</span>
+        </h1>
+      </header>
+      <main>
+        <div className="container">
+          <Step1 />
+          <Step2 />
+          <Step3 />
+        </div>
+      </main>
     </>
   )
 }

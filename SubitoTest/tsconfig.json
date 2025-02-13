@@ -8,4 +8,9 @@
       "path": "./tsconfig.node.json"
     }
   ],
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ESNext"
+  }
 }
