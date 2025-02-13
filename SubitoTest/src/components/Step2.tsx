@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store"
 import { Fragment, useEffect, useState } from "react";
 import { setCompanyName, setSpecialAccomodations, setStepTwoComplete } from "../store/formSlice";
+import { RootState } from "../store/store"
 import check from "../assets/png_check.png"
 
 function Step2() {

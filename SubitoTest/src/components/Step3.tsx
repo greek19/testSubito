@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store/store";
 import { useState } from "react";
 import { resetForm } from "../store/formSlice";
+import { RootState } from "../store/store";
 
 function Step3() {
     const { stepTwoComplete, attendees, names, companyName, specialAccomodations } = useSelector((state: RootState) => state.form);
