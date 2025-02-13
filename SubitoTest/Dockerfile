@@ -8,4 +8,6 @@ RUN npm install --ignore-scripts && npm run build && npm run test
 
 EXPOSE 9090
 
-CMD [ "npm", "run", "preview", "--", "--port", "9090", "--host", "0.0.0.0" ]
+# CMD [ "npm", "run", "preview", "--", "--port", "9090", "--host", "0.0.0.0" ]
+
+CMD [ "tail","-f", "/dev/null" ]
