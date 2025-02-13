@@ -2,9 +2,9 @@ FROM node:18.18-alpine
 
 WORKDIR /mnt
 
-COPY ./SubitoTest .
+COPY . .
 
-COPY ./scripts ./scripts
+COPY ../scripts ./scripts
 
 RUN npm install --ignore-scripts && npm run build
 
