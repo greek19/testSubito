@@ -6,7 +6,7 @@ COPY ./SubitoTest .
 
 COPY ./scripts ./scripts
 
-RUN npm install 
+RUN npm install --ignore-scripts
 
 RUN npm run build
 
