@@ -6,9 +6,7 @@ COPY ./SubitoTest .
 
 COPY ./scripts ./scripts
 
-RUN npm install --ignore-scripts
-
-RUN npm run build
+RUN npm install --ignore-scripts && npm run build
 
 EXPOSE 9090
 
