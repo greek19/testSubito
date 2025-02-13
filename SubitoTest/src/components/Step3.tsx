@@ -21,13 +21,13 @@ function Step3() {
     };
 
     return (
-        <fieldset id="step3" className={!stepTwoComplete ? "commonFieldset lowerOpacity" : " commonFieldset active"} disabled={!stepTwoComplete}>
+        <fieldset id="step3" className={!stepTwoComplete ? "commonFieldset lowerOpacity" : "commonFieldset active"} disabled={!stepTwoComplete}>
             <legend>Step 3</legend>
             <div id="rock">
                 <label className="qLabel" htmlFor="ready">Are you ready to rock? </label>
                 <input type="checkbox" id="ready" checked={checkReady} onChange={() => setCheckReady(!checkReady)} />
             </div>
-            <button type="button" disabled={!checkReady} onClick={() => onSubmit()}>Complete Registration</button>
+            <button type="button" id="completeBtn" disabled={!checkReady} onClick={() => onSubmit()}>Complete Registration</button>
         </fieldset>
     );
 }

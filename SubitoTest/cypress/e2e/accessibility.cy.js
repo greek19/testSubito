@@ -20,26 +20,26 @@ describe('Accessibility Tests', () => {
     it("should be fully navigable with keyboard", () => {
         cy.visit("/");
       
-        cy.get("body").realPress("Tab");
-        cy.focused().should("have.attr", "id", "attendees");
+        cy.get('body').realPress('Tab');
+        cy.focused().should('have.attr', 'id', 'attendees');
       
         cy.get('#attendees').select('1');
-        cy.realPress("Tab");
-        cy.focused().should("have.attr", "id", "id-0");
+        cy.realPress('Tab');
+        cy.focused().should('have.attr', 'id', 'id-0');
       
         cy.get('#id-0').type('Rossi');
         cy.get('#comapnyYes').click();
-        cy.realPress("Tab");
-        cy.focused().should("have.attr", "id", "id-company-name");
+        cy.realPress('Tab');
+        cy.focused().should('have.attr', 'id', 'id-company-name');
       
         cy.get('#id-company-name').type('Subito.it');
         cy.get('#accomodationNo').click();
-        cy.realPress("Tab");
-        cy.focused().should("have.attr", "id", "ready");
+        cy.realPress('Tab');
+        cy.focused().should('have.attr', 'id', 'ready');
       
         cy.get('#ready').click();
-        cy.realPress("Tab");
-        cy.focused().should("contain", "Complete Registration");
+        cy.realPress('Tab');
+        cy.focused().should('contain', 'Complete Registration');
       });
       
 

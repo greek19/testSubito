@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setAttendees, setNames, setStepOneComplete } from "../store/formSlice";
 import check from "../assets/png_check.png";
 import { RootState } from "../store/store";
 
 function Step1() {
     const { attendees, names, stepOneComplete } = useSelector((state: RootState) => state.form);
+    const [namesClass, setNamesClass] = useState("boldLeft");
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -15,10 +16,17 @@ function Step1() {
     useEffect(() => {
         const allFilled = names.length !== 0 && names?.every((name) => name.trim() !== "");
         dispatch(setStepOneComplete(allFilled));
+        setNamesClass( attendees === 0 ?  "boldLeft" : "boldLeft active")
     }, [names, dispatch])
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        dispatch(setAttendees(Number(e.target.value)));
+        setNamesClass("boldLeft")
+  
+        const newValue = Number(e.target.value)
+        dispatch(setAttendees(newValue));
+        setTimeout(() => {
+            setNamesClass(newValue > 0 ? "boldLeft active" : "boldLeft")
+        }, 250); 
     };
 
     const handleNameChange = (index: number, value: string) => {
@@ -45,7 +53,7 @@ function Step1() {
                 </select>
             </div>
 
-            <div id="names" className={attendees !== 0 ? "boldLeft active" : "boldLeft"}>
+            <div id="names" className={namesClass}>
                 <p className="textStd">Please provide full names:</p>
                 <div id="namesContainer">
                     {names.map((name, index) => (

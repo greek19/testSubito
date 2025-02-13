@@ -4,9 +4,7 @@ WORKDIR /mnt
 
 COPY . .
 
-COPY ../scripts ./scripts
-
-RUN npm install --ignore-scripts && npm run build
+RUN npm install --ignore-scripts && npm run build && npm run test
 
 EXPOSE 9090
 
