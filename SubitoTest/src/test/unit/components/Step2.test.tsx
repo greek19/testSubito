@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import Step2 from "../../../components/Step2";
+import configureStore from "redux-mock-store";
+import { Provider } from "react-redux";
 import { setCompanyName, setSpecialAccomodations } from "../../../store/formSlice";
+import Step2 from "../../../components/Step2";
 
 const mockStore = configureStore();
 const initialState = {
@@ -49,9 +49,9 @@ describe("Step2 Component", () => {
         renderComponent();
 
         const companyNameInput = screen.getByPlaceholderText("Company Name");
-        fireEvent.change(companyNameInput, { target: { value: "My Company" } });
+        fireEvent.change(companyNameInput, { target: { value: "Subito.it" } });
 
-        expect(store.dispatch).toHaveBeenCalledWith(setCompanyName("My Company"));
+        expect(store.dispatch).toHaveBeenCalledWith(setCompanyName("Subito.it"));
     });
 
     test("dispatches action when special accomodations choice changes", () => {
@@ -66,10 +66,10 @@ describe("Step2 Component", () => {
     test("dispatches action when step two conditions are met", async () => {
         renderComponent();
 
-        fireEvent.click(screen.getByLabelText("Yes", { selector: 'input[name="comapny"]' }));  // Seleziona 'Yes' per la compagnia
-        fireEvent.change(screen.getByPlaceholderText("Company Name"), { target: { value: "My Company" } });  // Inserisci il nome della compagnia
+        fireEvent.click(screen.getByLabelText("Yes", { selector: 'input[name="comapny"]' }));
+        fireEvent.change(screen.getByPlaceholderText("Company Name"), { target: { value: "Subito.it" } });
         fireEvent.click(screen.getByLabelText("Yes", { selector: 'input[name="accomodation"]' }));
 
-        expect(store.dispatch).toHaveBeenCalledWith(setCompanyName("My Company"));
+        expect(store.dispatch).toHaveBeenCalledWith(setCompanyName("Subito.it"));
     });
 });

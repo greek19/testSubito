@@ -1,9 +1,9 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import Step3 from '../../../components/Step3';
-import configureStore from "redux-mock-store";
 import { beforeEach, describe, expect, test, vi } from "vitest";
+import configureStore from "redux-mock-store";
+import { Provider } from 'react-redux';
 import { resetForm } from '../../../store/formSlice';
+import Step3 from '../../../components/Step3';
 
 const mockStore = configureStore();
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
     names: ["Rossi"],
     stepOneComplete: true,
     stepTwoComplete: true,
-    companyName: "Company",
+    companyName: "Subito.it",
     specialAccomodations: false,
   },
 };

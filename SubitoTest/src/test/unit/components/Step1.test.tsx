@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import Step1 from "../../../components/Step1";
-import { beforeEach, describe, expect, test, vi } from "vitest";
 
 const mockStore = configureStore();
 const initialState = {

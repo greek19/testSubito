@@ -1,12 +1,12 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store/store";
+import { useEffect } from "react";
 import { setAttendees, setNames, setStepOneComplete } from "../store/formSlice";
-import check from "../assets/png_check.png"
+import check from "../assets/png_check.png";
+import { RootState } from "../store/store";
 
 function Step1() {
-    const dispatch = useDispatch();
     const { attendees, names, stepOneComplete } = useSelector((state: RootState) => state.form);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(setStepOneComplete(false))
