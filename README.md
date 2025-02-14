@@ -7,3 +7,12 @@
     sh _build.sh
 ```
 - This script will run all automations and start the container at port 9090
+
+## Technology Stack
+- React + TypeScript
+- Vite as build tool
+- Eslint for static code analysis
+- Jest for unit test
+- Cypress for e2e test
+- SonarCloud for clean code analysis
+- Docker
