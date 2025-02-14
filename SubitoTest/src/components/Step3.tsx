@@ -1,11 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
-import { resetForm } from "../store/formSlice";
+import { resetForm, setReadyToRock } from "../store/formSlice";
 import { RootState } from "../store/store";
 
 function Step3() {
-    const { stepTwoComplete, attendees, names, companyName, specialAccomodations } = useSelector((state: RootState) => state.form);
-    const [checkReady, setCheckReady] = useState(false);
+    const { stepTwoComplete, attendees, names, companyName, specialAccomodations, readyToRock } = useSelector((state: RootState) => state.form);
     const dispatch = useDispatch();
 
     const onSubmit = () => {
@@ -16,7 +14,7 @@ function Step3() {
         console.log("Company name on your badges? " + (companyName !== "" ? "Yes, name: " + companyName : "No"));
         console.log("Special accomodations required? " + (specialAccomodations ? "Yes" : "No"));
 
-        setCheckReady(false)
+        dispatch(setReadyToRock(false));
         dispatch(resetForm());
     };
 
@@ -25,9 +23,9 @@ function Step3() {
             <legend>Step 3</legend>
             <div id="rock">
                 <label className="qLabel" htmlFor="ready">Are you ready to rock? </label>
-                <input type="checkbox" id="ready" checked={checkReady} onChange={() => setCheckReady(!checkReady)} />
+                <input type="checkbox" id="ready" checked={readyToRock} onChange={() => dispatch(setReadyToRock(!readyToRock))} />
             </div>
-            <button type="button" id="completeBtn" disabled={!checkReady} onClick={() => onSubmit()}>Complete Registration</button>
+            <button type="button" id="completeBtn" disabled={!readyToRock} onClick={() => onSubmit()}>Complete Registration</button>
         </fieldset>
     );
 }

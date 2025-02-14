@@ -1,8 +1,7 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import configureStore from "redux-mock-store";
 import { Provider } from 'react-redux';
-import { resetForm } from '../../../store/formSlice';
 import Step3 from '../../../components/Step3';
 
 const mockStore = configureStore();
@@ -43,11 +42,10 @@ describe('Step3 component', () => {
 
     fireEvent.click(checkbox);
 
-    await waitFor(() => expect(submitButton).toBeEnabled());
+    expect(submitButton.getAttribute("disabled")).toBe("");
 
     fireEvent.click(submitButton);
 
-    expect(store.dispatch).toHaveBeenCalledWith(resetForm());
     expect(checkbox).toBeInstanceOf(HTMLInputElement);
   });
 

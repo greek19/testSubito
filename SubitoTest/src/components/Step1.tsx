@@ -5,7 +5,7 @@ import check from "../assets/png_check.png";
 import { RootState } from "../store/store";
 
 function Step1() {
-    const { attendees, names, stepOneComplete } = useSelector((state: RootState) => state.form);
+    const { attendees, names, stepOneComplete, readyToRock} = useSelector((state: RootState) => state.form);
     const [namesClass, setNamesClass] = useState("boldLeft");
     const dispatch = useDispatch();
 
@@ -16,8 +16,11 @@ function Step1() {
     useEffect(() => {
         const allFilled = names.length !== 0 && names?.every((name) => name.trim() !== "");
         dispatch(setStepOneComplete(allFilled));
-        setNamesClass( attendees === 0 ?  "boldLeft" : "boldLeft active")
     }, [names, dispatch])
+
+    useEffect(()=>{
+        setNamesClass( attendees === 0 ?  "boldLeft" : "boldLeft active")
+    },[readyToRock,dispatch])
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setNamesClass("boldLeft")
